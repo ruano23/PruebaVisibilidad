@@ -22,7 +22,7 @@ class TecnicaApplicationTests {
 		BufferedReader bufferLectura = null;
 		try {
 			// Abrir el .csv en buffer de lectura
-			bufferLectura = new BufferedReader(new FileReader("product.csv"));
+			bufferLectura = new BufferedReader(new FileReader("size.csv"));
 
 			// Leer una linea del archivo
 			String linea = bufferLectura.readLine();
