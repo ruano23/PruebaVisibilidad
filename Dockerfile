@@ -1,4 +1,6 @@
-FROM openjdk:8-jdk-alpine
-COPY "./target/Prueba-0.0.0-SNAPCHOT.jar"
+FROM openjdk:11
+VOLUME /tmp
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ARG JAR_FILE=target/Prueba-0.0.1-SNAPCHOT.jar
+ADD ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
