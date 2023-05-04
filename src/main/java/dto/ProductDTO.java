@@ -11,6 +11,6 @@ import lombok.Setter;
 @Setter
 public class ProductDTO {
 
-    private String id;
-    private String sequence;
+    private Integer id;
+    private Integer sequence;
 }

@@ -12,6 +12,6 @@ import lombok.Setter;
 @JsonPropertyOrder({"sizeId", "quantity"})
 public class Stock {
 
-    private String sizeId;
+    private Integer sizeId;
     private Integer quantity;
 }

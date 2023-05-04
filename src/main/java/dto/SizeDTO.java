@@ -10,8 +10,8 @@ import lombok.Setter;
 @Setter
 public class SizeDTO {
 
-    private String id;
-    private String productId;
+    private Integer id;
+    private Integer productId;
     private Boolean backSoon;
     private Boolean special;
 }

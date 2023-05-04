@@ -10,6 +10,6 @@ import lombok.Setter;
 @Setter
 public class StockDTO {
 
-    private String sizeId;
+    private Integer sizeId;
     private Integer quantity;
 }

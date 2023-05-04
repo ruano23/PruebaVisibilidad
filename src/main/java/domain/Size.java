@@ -12,8 +12,8 @@ import lombok.Setter;
 @JsonPropertyOrder({"id", "productId", "backSoon", "special"})
 public class Size {
 
-    private String id;
-    private String productId;
+    private Integer id;
+    private Integer productId;
     private Boolean backSoon;
     private Boolean special;
 }

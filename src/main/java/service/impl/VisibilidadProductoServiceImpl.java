@@ -13,7 +13,9 @@ import repository.impl.StockRepositoryImpl;
 import service.VisibilidadProductoService;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,13 +27,14 @@ public class VisibilidadProductoServiceImpl implements VisibilidadProductoServic
 
 
     @Override
-    public List<String> executeAlgorithm() {
+    public List<Integer> executeAlgorithm() {
         List<Product> products = productRepository.getAll();
-        List<Size> sizes = sizeRepository.getAll();
+        List<Size> finalSizes = sizeRepository.getAll();
 
+        //Se crea el resultado esperado sin filtrar.
         var result = new ArrayList<Product>();
         products.forEach(product -> {
-           var sizesOfProduct = sizes.stream().filter(size -> size.getProductId().equals(product.getId())).collect(Collectors.toList());
+           var sizesOfProduct = finalSizes.stream().filter(size -> size.getProductId().equals(product.getId())).collect(Collectors.toList());
            var muestroEspecial = hayStockSpecial(sizesOfProduct);
            if (muestroEspecial){
                result.add(product);
@@ -40,12 +43,12 @@ public class VisibilidadProductoServiceImpl implements VisibilidadProductoServic
            }
         });
 
-        return result.stream().map(Product::getId).collect(Collectors.toList());
+        return result.stream().sorted(Comparator.comparing(Product::getSequence)).map(Product::getId).collect(Collectors.toList());
     }
 
     private boolean hayStock(Size size) {
         List<Stock> stocks = stockRepository.getAll();
-        var stockFiltrado = stocks.stream().filter(stock -> stock.getQuantity()>0).collect(Collectors.toSet());
+        var stockFiltrado = stocks.stream().filter(stock -> stock.getQuantity()>0).toList();
         return stockFiltrado.stream().anyMatch(stock -> stock.getSizeId().equals(size.getId())) || size.getBackSoon();
     }
     private boolean hayStockSpecial(List<Size> sizes) {

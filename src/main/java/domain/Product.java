@@ -13,6 +13,6 @@ import lombok.Setter;
 @JsonPropertyOrder({"id", "sequence"})
 public class Product {
 
-    private String id;
-    private String sequence;
+    private Integer id;
+    private Integer sequence;
 }
