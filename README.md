@@ -3,8 +3,9 @@ Primeramente se han leído los requisitos solicitados y analizado detenidamente 
 se debía de entregar, en tiempo y fecha se ha dado prioridad a desarrollar el código, comprobar que funcionaba cada 
 parte correctamente.
 Se ha creado un proyecto en Spring Initializr con las dependencias y versión java con la que queríamos trabajar.
-Se ha importado dicho proyecto en el entorno de trabajo de intelliJ y conectado en un repositorio de github, 
-creando una rama principal y una rama secundaria en la que hemos ido trabajando y luego se ha realizado el conveniente
+Se ha importado dicho proyecto en el entorno de trabajo de intelliJ y conectado en un repositorio de github, el cual
+es público y se puede acceder a ver el contenido en él, "https://github.com/ruano23/Prueba.git", creando una rama principal 
+y una rama secundaria en la que hemos ido trabajando y luego se ha realizado el conveniente
 merge.
 
 Con respecto al código se ha ido creando la base de la aplicación con los objetos que se solicitaban, posteriormente 
@@ -20,9 +21,10 @@ indica la "salida" supuestamente efectiva, pero una vez que se leen las casuíst
 todos los productos deben de salir y eso es lo que he generado, la salida de productos con su identificador en el orden 
 de secuencia. En el documento los productos 2 y 4 no se muestran, pero en nuestro caso al tener cada uno de estros productos
 la propiedad "backsoon" en TRUE y según el primer requisito que dice así:
-"La primera es cuando una talla está marcada como back soon, en este caso, aunque la talla no tenga stock, el producto debe mostrarse igual, puesto que es un producto que va a volver a estar a la venta cuando vuelva a entrar stock.".
+"La primera es cuando una talla está marcada como back soon, en este caso, aunque la talla no tenga stock, el producto debe mostrarse igual, 
+puesto que es un producto que va a volver a estar a la venta cuando vuelva a entrar stock.".
 
-Con respecto a la dockerización, nunca la había realizado antes e intentado hacerlo, me he instado todo sobre docker, 
-generado el archivo Dockerfile, pero no he logrado resolverlo más bien por el poco tiempo que he invertido al final.
+Con respecto a la dockerización, nunca lo había hecho anteriormente, pero he estado buscando la información y se ha creado
+el fichero Dockerfile para el proyecto.
 
 

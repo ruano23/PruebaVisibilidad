@@ -9,4 +9,7 @@ import java.io.FileReader;
 @SpringBootApplication
 public class TecnicaApplication {
 
+	public static void main(String[] args){
+		SpringApplication.run(TecnicaApplication.class, args);
+	}
 	}
